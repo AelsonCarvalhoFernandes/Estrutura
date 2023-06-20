@@ -49,7 +49,7 @@ class LinkedList:
                 self.Id(node)
             else:
                 self.recursiveAppend(node.next, value)
-        else:
+        elif node.value.price == value.price and node.value.year == value.year and node.value.brand == value.brand:
             print("O valor já se encontra na tabela")
 
     def Id(self, node):

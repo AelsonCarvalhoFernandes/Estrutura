@@ -30,6 +30,8 @@ class BinarySearchTree:
     def _search_recursive(self, key, current_node, Id=None):
         if Id == None:
             if current_node is None or current_node.key.model == key:
+                if current_node is None:
+                    return print("O nó não existe")
                 return current_node.key.show()
             if key < current_node.key.model:
                 return self._search_recursive(key, current_node.left)

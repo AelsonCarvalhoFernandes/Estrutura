@@ -67,9 +67,9 @@ class AVLTree:
         if not node:
             return node
 
-        if key < node.key:
+        if key < node.key.model:
             node.left = self._remove(node.left, key)
-        elif key > node.key:
+        elif key > node.key.model:
             node.right = self._remove(node.right, key)
         else:
             if not node.left:
@@ -106,6 +106,8 @@ class AVLTree:
     def _search(self, node, key, Id=None):
         if Id == None:
             if not node or node.key.model == key:
+                if not node:
+                    return print("O nó não existe")
                 return node.key.show()
 
             if key < node.key.model:

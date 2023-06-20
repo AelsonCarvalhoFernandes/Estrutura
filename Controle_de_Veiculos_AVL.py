@@ -27,14 +27,21 @@ while ligado:
 
     if escolha == "3":
         modelo = int(input("Qual modelo deseja pesquisar:\n[1] Compacto\n[2] SUV\n[3] Picape\n[4] Esportivos\n[5] Caminhão\n[6] Colecionaveis\n[7] Carro de luxo\nEscolha: "))
-        tree.search(modelo, 2)
+        Id = input("ID: ")
+
+        if Id == "":
+            tree.search(modelo)
+        else:
+            Id = int(Id)
+            tree.search(modelo, Id)
     
     if escolha == "0":
         print("Escolha o modelo e o ID, Se o ID não for inserido todo o modelo será apagado\n")
         modelo = int(input("Qual modelo deseja excluir:\n[1] Compacto\n[2] SUV\n[3] Picape\n[4] Esportivos\n[5] Caminhão\n[6] Colecionaveis\n[7] Carro de luxo\nModelo: "))
-        Id = int(input("ID: "))
+        Id = input("ID: ")
 
-        if Id == None:
+        if Id == "":
             tree.remove(modelo)
         else:
+            Id = int(Id)
             tree.removeById(modelo, Id)
